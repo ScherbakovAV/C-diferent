@@ -5,12 +5,12 @@ System.Console.WriteLine("");
 
 void Functions()
 {
-   Console.WriteLine("Дана функция y=(7x)^2+3x+6");
-   int x = new Random().Next(-100, 100);
-   Console.WriteLine($"Для x = {x} значение функции y равно: {Math.Pow(7 * x, 2) + 3 * x + 6}\n ");
-   Console.WriteLine("Дана функция x=(12a)^2+7a+12");
-   int a = new Random().Next(-100, 100);
-   Console.WriteLine($"Для a = {a} значение функции x равно: {Math.Pow(12 * a, 2) + 7 * a + 12}");
+    Console.WriteLine("Дана функция y=(7x)^2+3x+6");
+    int x = new Random().Next(-100, 100);
+    Console.WriteLine($"Для x = {x} значение функции y равно: {Math.Pow(7 * x, 2) + 3 * x + 6}\n ");
+    Console.WriteLine("Дана функция x=(12a)^2+7a+12");
+    int a = new Random().Next(-100, 100);
+    Console.WriteLine($"Для a = {a} значение функции x равно: {Math.Pow(12 * a, 2) + 7 * a + 12}");
 }
 System.Console.WriteLine("____S2.1 - Значения функции y=(7x)^2+3x+6 и x=(12a)^2+7a+12____\n ");
 Functions();
@@ -156,6 +156,18 @@ System.Console.WriteLine("");
 
 // S2.13А. Даны два числа. Найти среднее арифметическое и среднее геометрическое их  модулей.
 
+void AverageOfTwoNumbersModules()
+{
+    System.Console.WriteLine("Введите два целых числа:");
+    double numberA = Convert.ToDouble(System.Console.ReadLine());
+    double numberB = Convert.ToDouble(System.Console.ReadLine());
+    System.Console.WriteLine($"Cреднее арифметическое модулей этих чисел равно {(Math.Abs(numberA) + Math.Abs(numberB)) / 2}");
+    System.Console.WriteLine($"Cреднее геометрическое модулей этих чисел равно {Math.Round(Math.Sqrt(Math.Abs(numberA) * Math.Abs(numberB)), 2)}");
+}
+System.Console.WriteLine("____S2.13А - Cреднее арифметическое и среднее геометрическое модулей двух чисел____\n ");
+AverageOfTwoNumbersModules();
+System.Console.WriteLine("");
+
 // S2.14. Даны основания и высота равнобедренной трапеции. Найти ее периметр.
 
 // S2.14А. Даны стороны прямоугольника. Найти его периметр и длину диагонали.
@@ -166,6 +178,16 @@ System.Console.WriteLine("");
 
 // S2.17. Известны координаты на плоскости двух точек. Составить программу вычисления расстояния между ними.
 
+double DistanceBetweenTwoPointsOnAPlane(double x1, double y1, double x2, double y2)
+{
+    System.Console.WriteLine($"Даны две точки с координатами на плоскости:\nТочка 1 - ({x1}, {y1});\nТочка 2 - ({x2}, {y2})");
+    double distance = Math.Sqrt(Math.Pow(x1 - x2, 2) + Math.Pow(y1 - y2, 2));
+    return distance;
+}
+System.Console.WriteLine("____S2.17 - Вычисление расстояния между двумя точками по их координатам на плоскости____\n ");
+System.Console.WriteLine($"Расстояние между этими точкаими равно {DistanceBetweenTwoPointsOnAPlane(15, -42, -3, 0):f3}");
+System.Console.WriteLine("");
+
 // S2.18. Даны основания и высота равнобедренной трапеции. Найти периметр трапеции.
 
 // S2.19. Даны основания равнобедренной трапеции и угол при большем основании. Найти площадь трапеции.
@@ -175,6 +197,24 @@ System.Console.WriteLine("");
 // S2.21. Выпуклый четырехугольник задан координатами своих вершин. Найти площадь этого четырехугольника как сумму площадей треугольников.
 
 // S2.22. Известна стоимость 1 кг конфет, печенья и яблок. Найти стоимость всей покупки, если купили x кг конфет, у кг печенья и z кг яблок.
+
+void CostOfProducts()
+{
+    double candyPrice = 798.50;
+    double cookiePrice = 315.80;
+    double applePrice = 80.00;
+    System.Console.WriteLine($"Стоимость продуктов за килограмм:\n- конфеты: {candyPrice} руб.;\n- печенье: {cookiePrice} руб.;\n- яблоки: {applePrice} руб.");
+    System.Console.WriteLine("Введите, сколько хотите купить килограмм конфет...");
+    double x = Convert.ToDouble(System.Console.ReadLine());
+    System.Console.WriteLine("Введите, сколько хотите купить килограмм печенья...");
+    double y = Convert.ToDouble(System.Console.ReadLine());
+    System.Console.WriteLine("Введите, сколько хотите купить килограмм яблок...");
+    double z = Convert.ToDouble(System.Console.ReadLine());
+    System.Console.WriteLine($"Стоимость Вашей покупки будет составит {x * candyPrice + y * cookiePrice + z * applePrice} руб.");
+}
+System.Console.WriteLine("____S2.22 - Вычисление стоимости покупки при заданной цене продуктов____\n ");
+CostOfProducts();
+System.Console.WriteLine("");
 
 // S2.23. Известна стоимость монитора, системного блока, клавиатуры и мыши. Сколько будут стоить 3 компьютера из этих элементов? N компьютеров?
 

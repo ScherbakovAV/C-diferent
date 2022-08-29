@@ -36,7 +36,7 @@ bool[,] IdentifyDigit(char digit)
 void WriteNumber()
 {
     Console.Write("Введите натуральное число: ");
-    string number = Console.ReadLine();
+    string number = Console.ReadLine()!;
 
     for
     (
